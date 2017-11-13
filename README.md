@@ -1,3 +1,5 @@
-# progressive-web-apps
+# Progressive Web App
 
-Repo for slides
+Slides repository
+
+<https://przemuh.github.io/progressive-web-apps/>

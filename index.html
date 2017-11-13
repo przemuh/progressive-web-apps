@@ -1,0 +1,616 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Progressive Web Apps</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section id="cover">
+            <h2>Progressive Web Applications</h2>
+            <br/>
+            <p>Przemek Suchodolski</p>
+            <p><a href="http://przemuh.pl" target="_blank">przemuh.pl</a></p>
+            <p><a href="https://twitter.com/przemuh" target="_blank">@przemuh</a></p>
+        </section>
+
+        <section>
+            <h2>About me</h2>
+            <ul>
+                <li class="fragment">Front-End Engineer</li>
+                <li class="fragment">Certified Scrum Master</li>
+                <li class="fragment"><a href="https://www.youtube.com/user/przemuh" target="_blank">Amateur Musician</a></li>
+                <li class="fragment">Addicted to FIFA</li>
+            </ul>
+        </section>
+
+        <section>
+            <a href="https://www.egnyte.com/jobs/" target="_blank">
+                <div><img src="images/egnyte-logo.png" /></div>
+                <div class="fragment">is hiring</div>
+            </a>
+        </section>
+
+        <section>
+            <a href="https://sunscrapers.com/careers/jobs/javascript-developer/" target="_blank">
+                <div><img src="images/sunscrapers-logo.jpg" /></div>
+                <div class="fragment">is hiring</div>
+            </a>
+        </section>
+
+        <section>
+            <h2>MVP</h2>
+            <div class="fragment">One app - three platforms</div>
+            <ul>
+                <li class="fragment">Web</li>
+                <li class="fragment">Android</li>
+                <li class="fragment">iOS</li>
+            </ul>
+            <div class="fragment lotr"></div>
+        </section>
+
+        <section>
+            <ul>
+                <li class="fragment">WebView</li>
+                <li class="fragment">Compile JS/HTML/CSS to native</li>
+                <li class="fragment pwa">PWA</li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h1>Stats</h1>
+            </section>
+
+            <section>
+                <img src="images/global-digital-share.png"/>
+                <div class="source">
+                    <a href="https://wearesocial.com/uk/special-reports/digital-in-2017-global-overview" target="_blank">
+                        source: wearesocial.com
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h4>Share of Digital Media Time Spent</h4>
+                <canvas data-chart="pie">
+                    <!--
+                    {
+                     "data": {
+                      "labels": ["Smartphone App"," Desktop"," Tablet App"," Smartphone Web"," Tablet Web"],
+                      "datasets": [
+                       {
+                        "data":[50,34,7,7,2]
+                       }
+                      ]
+                     },
+                     "options": { "responsive": "true" }
+                    }
+                    -->
+                </canvas>
+                <div class="source">comScore Media Metrix Multi-Platform & Mobile Metrix, U.S., Total Audience, June 2017</div>
+            </section>
+
+            <section>
+                <h4>Share of Time Spent on Mobile: App vs. Web</h4>
+                <canvas data-chart="pie">
+                    <!--
+                    {
+                     "data": {
+                      "labels": ["Mobile Web"," Mobile App"],
+                      "datasets": [
+                       {
+                        "data":[13,87]
+                       }
+                      ]
+                     },
+                     "options": { "responsive": "true" }
+                    }
+                    -->
+                </canvas>
+                <div class="source">Source: comScore Mobile Metrix, U.S., Age 18+, June 2017</div>
+            </section>
+
+            <section>
+                <h4>Average Monthly Minutes per Visitor</h4>
+                <canvas data-chart="bar">
+                    <!--
+                    {
+                     "data": {
+                         "labels": ["App", "Mobile Web"],
+                          "datasets": [
+                            {
+                              "label": "m",
+                              "data": [186.9, 11.9],
+                              "backgroundColor": ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"]
+                            }
+                          ]
+                        },
+                     "options": { "legend": false, "responsive": true, "scales": { "xAxes": [{ "stacked": true }], "yAxes": [{ "stacked": true }] } }
+                    }
+                    -->
+                </canvas>
+                <div class="source">Source: comScore Mobile Metrix, U.S., Age 18+, June 2017</div>
+            </section>
+
+            <section>
+                <h4>Average Monthly Unique Visitors (MM)</h4>
+                <canvas data-chart="bar">
+                    <!--
+                    {
+                     "data": {
+                         "labels": ["App", "Mobile Web"],
+                          "datasets": [
+                            {
+                              "label": "MM",
+                              "data": [7, 15.7],
+                              "backgroundColor": ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"]
+                            }
+                          ]
+                        },
+                     "options": { "legend": false, "responsive": true, "scales": { "xAxes": [{ "stacked": true }], "yAxes": [{ "stacked": true }] } }
+                    }
+                    -->
+                </canvas>
+                <div class="source">Source: comScore Mobile Metrix, U.S., Age 18+, June 2017</div>
+            </section>
+
+            <section>
+                <h4>Every step = 20%</h4>
+                <canvas data-chart="bar">
+                    <!--
+                    {
+                     "data": {
+                         "labels": ["Initial", "App store page view", "Install", "Open App", "Sign up", "Create content", "Share"],
+                          "datasets": [
+                            {
+                              "label": "%",
+                              "data": [100, 80, 64, 51, 40, 32, 24]
+                            }
+                          ]
+                        },
+                     "options": { "legend": false, "responsive": true, "scales": { "xAxes": [{ "stacked": true }], "yAxes": [{ "stacked": true }] } }
+                    }
+                    -->
+                </canvas>
+                <div class="source">
+                    <a href="http://blog.gaborcselle.com/2012/10/every-step-costs-you-20-of-users.html" target="_blank">
+                        http://blog.gaborcselle.com/2012/10/every-step-costs-you-20-of-users.html
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <img src="images/mobile-share.png"/>
+                <div class="source">
+                    <a href="https://wearesocial.com/uk/special-reports/digital-in-2017-global-overview" target="_blank">
+                        source: wearesocial.com
+                    </a>
+                </div>
+            </section>
+        </section>
+        <!-- End of charts !-->
+
+        <section id="history">
+            <h1>2015</h1>
+            <ul class="list">
+                <li class="fragment">Frances Berriman (designer)</li>
+                <li class="fragment">Alex Russell (Google Chrome engineer)</li>
+            </ul>
+            <br/>
+            <p class="fragment" style="font-size: 0.7em;"><a href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/" target="_blank">
+                Progressive Web Apps: Escaping Tabs Without Losing Our Soul
+            </a></p>
+        </section>
+
+        <section>
+            <section id="characteristic">
+                <h2>PWA characteristic</h2>
+                <ul>
+                    <li class="fragment">Responsive</li>
+                    <li class="fragment">Connectivity independent</li>
+                    <li class="fragment">App-like-interactions</li>
+                    <li class="fragment">Fresh</li>
+                    <li class="fragment">Safe</li>
+                    <li class="fragment">Discoverable</li>
+                    <li class="fragment">Re-engageable</li>
+                    <li class="fragment">Installable</li>
+                    <li class="fragment">Linkable</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Responsive: to fit any form factor</li>
+                        <li>Connectivity independent: Progressively-enhanced with Service Workers to let them work offline</li>
+                        <li>App-like-interactions: Adopt a Shell + Content application model to create appy navigations & interactions</li>
+                        <li>Fresh: Transparently always up-to-date thanks to the Service Worker update process</li>
+                        <li>Safe: Served via TLS (a Service Worker requirement) to prevent snooping</li>
+                        <li>Discoverable: Are identifiable as “applications” thanks to W3C Manifests and Service Worker registration scope allowing search engines to find them</li>
+                        <li>Re-engageable: Can access the re-engagement UIs of the OS; e.g. Push Notifications</li>
+                        <li>Installable: to the home screen through browser-provided prompts, allowing users to “keep” apps they find most useful without the hassle of an app store</li>
+                        <li>Linkable: meaning they’re zero-friction, zero-install, and easy to share. The social power of URLs matters.</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>PWA characteristic TL;DR</h2>
+                <ul>
+                    <li class="fragment">Reliable</li>
+                    <li class="fragment">Fast</li>
+                    <li class="fragment">Engaging</li>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Reliable - Load instantly and never show the downasaur, even in uncertain network conditions.</li>
+                            <li>Fast - Respond quickly to user interactions with silky smooth animations and no janky scrolling.</li>
+                            <li>Engaging - Feel like a natural app on the device, with an immersive user experience.</li>
+                        </ul>
+                    </aside>
+                </ul>
+            </section>
+
+            <section>
+                <h2>
+                    <a href="https://developers.google.com/web/progressive-web-apps/checklist" target="_blank">
+                        PWA checklist
+                    </a>
+                </h2>
+                <ul>
+                    <li class="fragment">Site is served over HTTPS</li>
+                    <li class="fragment">Pages are responsive on tablets & mobile devices</li>
+                    <li class="fragment">The start URL (at least) loads while offline</li>
+                    <li class="fragment">Metadata provided for Add to Home screen</li>
+                    <li class="fragment">First load fast even on 3G <br/><span class="text-small">(WebPageTest (aim for <4000 first view on Mobile 3G Nexus 5 Chrome)</span></li>
+                    <li class="fragment">Site works cross-browser</li>
+                    <li class="fragment">Page transitions don't feel like they block on the network</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Reliable / Offline First</h2>
+            </section>
+
+            <section>
+                <img class="fragment" src="images/poor-signal.png"/>
+            </section>
+
+            <section>
+                <img src="images/offline-mobile.png" />
+            </section>
+
+            <section>
+                <img src="images/load-mobile.png" />
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Service Worker</h2>
+            </section>
+
+            <section data-background-video="videos/service-worker.mp4">
+                <div class="source" style="height: 300px;"><a href="https://www.youtube.com/watch?v=cmGr0RszHc8" target="_blank">
+                    Jake Archibald on Instant Loading: Building offline-first Progressive Web Apps
+                </a></div>
+            </section>
+
+            <section>
+                <h3>Register</h3>
+                <pre><code data-trim>
+                    if('serviceWorker' in navigator) {
+                        navigator.serviceWorker.register('/service-worker.js');
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Install event</h3>
+                <pre><code class="hljs" data-trim contenteditable>
+self.addEventListener('install', event => {
+   event.waitUntil(
+       caches.open(CACHE_NAME)
+           .then(cache => {
+               const urlsToCache = [
+                   "/",
+                   assets["main.js"]
+               ];
+               cache.addAll(urlsToCache);
+           })
+   );
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Fetch event</h3>
+                <pre><code class="hljs" data-trim contenteditable>
+self.addEventListener('fetch', function(event) {
+   event.respondWith(
+       caches.match(event.request).then(function(response) {
+           return response || fetch(event.request);
+       })
+   );
+});
+                    </code></pre>
+            </section>
+
+            <section>
+                <h3>
+                    <a href="https://github.com/goldhand/sw-precache-webpack-plugin" target="_blank">
+                        SW Precache Webpack Plugin
+                    </a>
+                </h3>
+                <pre><code data-trim>
+                { ...
+
+                    plugins: [
+                        new SWPrecacheWebpackPlugin(
+                          {
+                            cacheId: 'my-project-name',
+                            dontCacheBustUrlsMatching: /\.\w{8}\./,
+                            filename: 'service-worker.js',
+                            minify: true,
+                            navigateFallback: PUBLIC_PATH + 'index.html',
+                            staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+                          }
+                        ),
+                      ]
+
+                ...}
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Background sync</h1>
+            </section>
+
+            <section>
+                <h3>Sync registration</h3>
+                <pre><code data-trim>
+                    navigator.serviceWorker.ready.then(function(registration) {
+                      registration.sync.register('outbox').then(function() {
+                        // registration succeeded
+                      }, function() {
+                        // registration failed
+                      });
+                    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Respond to sync</h3>
+                <pre><code data-trim>
+                    self.addEventListener('sync', function(event) {
+                      if (event.tag == 'outbox') {
+                        event.waitUntil(sendEverythingInTheOutbox());
+                      }
+                    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Periodical sync</h3>
+                <pre><code data-trim>
+                    navigator.serviceWorker.ready.then(function(registration) {
+                      registration.periodicSync.register({
+                        tag: 'get-latest-news',         // default: ''
+                        minPeriod: 12 * 60 * 60 * 1000, // default: 0
+                        powerState: 'avoid-draining',   // default: 'auto'
+                        networkState: 'avoid-cellular'  // default: 'online'
+                      }).then(function(periodicSyncReg) {
+                        // success
+                      }, function() {
+                        // failure
+                      })
+                    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Debugging</h3>
+                <img src="images/service-worker-debug.png" />
+            </section>
+        </section>
+
+        <section>
+
+            <section>
+                <h2>Engaging</h2>
+                <div><i>Feel like a natural app on the device, with an immersive user experience.</i></div>
+            </section>
+
+            <section>
+                <h3>Push notification</h3>
+                <pre><code data-trim>
+                    self.addEventListener('push', function(event) {
+                       console.log('Received a push message', event);
+
+                       const title = 'Yay a message.';
+                       const body = 'We have received a push message.';
+                       const icon = '/images/icon-192x192.png';
+                       const tag = 'simple-push-demo-notification-tag';
+
+                       event.waitUntil(
+                           self.registration.showNotification(title, {
+                               body: body,
+                               icon: icon,
+                               tag: tag
+                           })
+                       );
+                    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Manifest.json</h2>
+                <pre><code data-trim><link rel="manifest" href="manifest.json"></code></pre>
+                <pre><code data-trim>
+                    {
+                       "name": "Meet Js",
+                       "short_name": "mjs",
+                       "icons": [
+                           {
+                               "src": "/android-chrome-192x192.png",
+                               "sizes": "192x192",
+                               "type": "image/png"
+                           },
+                           {
+                               "src": "/android-chrome-512x512.png",
+                               "sizes": "512x512",
+                               "type": "image/png"
+                           }
+                       ],
+                       "theme_color": "#f9a20c",
+                       "background_color": "#ffffff",
+                       "display": "standalone"
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <video src="videos/add-to-home-screen.mp4" data-autoplay></video>
+            </section>
+
+            <section>
+                <img src="images/manifest-debug.png" />
+            </section>
+        </section>
+
+        <section>
+            <section><h1>FAST</h1></section>
+
+            <section>
+                <ul>
+                    <li class="fragment">lib substitute</li>
+                    <li class="fragment">code-splitting</li>
+                    <li class="fragment">link rel="preload"</li>
+                    <li class="fragment"><a href="https://www.polymer-project.org/1.0/toolbox/server" target="_blank">PRPL Pattern</a></li>
+                    <li class="fragment"><a href="https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447" target="_blank">Progressive Enhancement</a></li>
+                    <li class="fragment"><a href="https://medium.com/google-developers/instant-loading-web-apps-with-an-application-shell-architecture-7c0c2f10c73" target="_blank">App Shell Architecture</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section><h1>Case studies</h1></section>
+
+            <section data-background-iframe="https://www.youtube.com/embed/JmC0xkCMFCE?rel=0&amp;start=65&amp;autoplay=1"></section>
+            <section>
+                <ul>
+                    <li><a href="https://developers.google.com/web/showcase/2017/twitter" target="_blank">Twitter</a></li>
+                    <li><a href="https://developers.google.com/web/showcase/2016/alibaba" target="_blank">Alibaba</a></li>
+                    <li><a href="https://developers.google.com/web/showcase/2016/aliexpress" target="_blank">Aliexpress</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <ul>
+                <li class="fragment">WEB !== NATIVE <a href="https://whatwebcando.today/" target="_blank">(whatwebcando.today)</a></li>
+                <li class="fragment">Service worker <a href="https://jakearchibald.github.io/isserviceworkerready/" target="_blank">(is service worker ready)</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Take away</h2>
+            <ul>
+                <li class="fragment">Each step - 20%</li>
+                <li class="fragment">Reliable - Fast - Engaging</li>
+                <li class="fragment">Progressive</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Thank you</h1>
+            <div>Questions ?</div>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    const colors = [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+    ];
+
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {src: 'plugin/chart/Chart.min.js'},
+            {src: 'plugin/chart/csv2chart.js'},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ],
+        chart: {
+            defaults: {
+                global: {
+                    title: { fontColor: "#FFF" },
+                    legend: {
+                        labels: { fontColor: "#FFF" },
+                    },
+                },
+                scale: {
+                    scaleLabel: { fontColor: "#FFF" },
+                    gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+                    ticks: { fontColor: "#FFF" },
+                }
+            },
+            bar: { backgroundColor: colors },
+            pie: { backgroundColor: [colors] }
+        }
+    });
+
+    Reveal.addEventListener('fragmentshown', function(e) {
+        function checkFragment(needle) {
+            return e.fragment.className.indexOf(needle) > -1
+        }
+        if (checkFragment('lotr')) {
+            Reveal.getCurrentSlide().dataset.background = 'https://media.giphy.com/media/1I2NwmjvSzNS0/giphy.gif';
+            Reveal.sync();
+        }
+
+        if (checkFragment('pwa')) {
+            e.fragment.classList.add('highlight-red');
+        }
+
+    }, false);
+</script>
+</body>
+</html>

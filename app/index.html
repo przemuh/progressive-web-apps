@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet js app</title>
+
+    <link rel="manifest" href="manifest.json">
+</head>
+<style>
+    .app {
+        background-color: #2B1C33;
+        color: #fff;
+    }
+
+    .center {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body class="app">
+    <div class="center"><h1>Place your app here</h1></div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
