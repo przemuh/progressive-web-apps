@@ -7,9 +7,18 @@
         font-size: 0.6em;
     }
 
+    .text-very-small {
+        font-size: 0.4em;
+    }
+
     .source {
         margin-top: 10px;
         font-size: 0.4em;
         font-style: italic;
+    }
+
+    .transparent {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
     }
 }

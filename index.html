@@ -27,12 +27,15 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section id="cover">
-            <h2>Progressive Web Applications</h2>
-            <br/>
-            <p>Przemek Suchodolski</p>
-            <p><a href="http://przemuh.pl" target="_blank">przemuh.pl</a></p>
-            <p><a href="https://twitter.com/przemuh" target="_blank">@przemuh</a></p>
+        <section data-background-image="images/background.jpg" class="transparent">
+            <h2>
+                P<span class="text-very-small">rogressive</span>
+                W<span class="text-very-small">eb</span>
+                A<span class="text-very-small">pplications</span>
+            </h2>
+            <div style="font-style: italic; font-size: 0.7em;">
+                Przemek Suchodolski / <a href="https://twitter.com/przemuh" target="_blank">@przemuh</a> / <a href="http://przemuh.pl" target="_blank">przemuh.pl</a>
+            </div>
         </section>
 
         <section>
@@ -45,11 +48,8 @@
             </ul>
         </section>
 
-        <section>
-            <a href="https://www.egnyte.com/jobs/" target="_blank">
-                <div><img src="images/egnyte-logo.png" /></div>
-                <div class="fragment">is hiring</div>
-            </a>
+        <section data-background-image="images/egnyte-bg.jpg">
+            <a href="https://www.egnyte.com/jobs/" target="_blank"><div class="fragment transparent">is hiring</div></a>
         </section>
 
         <section>
@@ -60,7 +60,7 @@
         </section>
 
         <section>
-            <h2>MVP</h2>
+            <h2>First task</h2>
             <div class="fragment">One app - three platforms</div>
             <ul>
                 <li class="fragment">Web</li>
@@ -72,9 +72,9 @@
 
         <section>
             <ul>
-                <li class="fragment">WebView</li>
-                <li class="fragment">Compile JS/HTML/CSS to native</li>
-                <li class="fragment pwa">PWA</li>
+                <li class="fragment">Hybrid / WebView / PhoneGap 💀</li>
+                <li class="fragment">Compile JS to native (React Native) 🚀</li>
+                <li class="fragment">PWA 🎉</li>
             </ul>
         </section>
 
@@ -143,7 +143,7 @@
                             {
                               "label": "m",
                               "data": [186.9, 11.9],
-                              "backgroundColor": ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"]
+                              "backgroundColor": ["#E42128", "#2782DA"]
                             }
                           ]
                         },
@@ -165,7 +165,7 @@
                             {
                               "label": "MM",
                               "data": [7, 15.7],
-                              "backgroundColor": ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"]
+                              "backgroundColor": ["#E42128", "#2782DA"]
                             }
                           ]
                         },
@@ -291,7 +291,7 @@
 
         <section>
             <section>
-                <h2>Reliable / Offline First</h2>
+                <h2>Reliable / Connectivity independent</h2>
             </section>
 
             <section>
@@ -335,8 +335,9 @@ self.addEventListener('install', event => {
        caches.open(CACHE_NAME)
            .then(cache => {
                const urlsToCache = [
-                   "/",
-                   assets["main.js"]
+                    "/",
+                    "main.js",
+                    "images/david.jpg"
                ];
                cache.addAll(urlsToCache);
            })
@@ -385,7 +386,7 @@ self.addEventListener('fetch', function(event) {
             </section>
 
             <section>
-                <h1>Background sync</h1>
+                <h1>Fresh / Background sync</h1>
             </section>
 
             <section>
@@ -439,12 +440,14 @@ self.addEventListener('fetch', function(event) {
         <section>
 
             <section>
-                <h2>Engaging</h2>
-                <div><i>Feel like a natural app on the device, with an immersive user experience.</i></div>
+                <h2>Engaging / Native experience</h2>
+            </section>
+
+            <section data-background-image="images/push.jpg">
+                <h3 class="transparent">Push notification</h3>
             </section>
 
             <section>
-                <h3>Push notification</h3>
                 <pre><code data-trim>
                     self.addEventListener('push', function(event) {
                        console.log('Received a push message', event);
@@ -465,10 +468,14 @@ self.addEventListener('fetch', function(event) {
                 </code></pre>
             </section>
 
+            <section data-background-image="images/homescreen.jpg">
+                <h3 class="transparent">Adding to home screen</h3>
+            </section>
+
             <section>
                 <h2>Manifest.json</h2>
-                <pre><code data-trim><link rel="manifest" href="manifest.json"></code></pre>
-                <pre><code data-trim>
+                <pre class="fragment"><code data-trim><link rel="manifest" href="manifest.json"></code></pre>
+                <pre class="fragment"><code data-trim>
                     {
                        "name": "Meet Js",
                        "short_name": "mjs",
@@ -501,12 +508,12 @@ self.addEventListener('fetch', function(event) {
         </section>
 
         <section>
-            <section><h1>FAST</h1></section>
+            <section><h1>Fast / Performance</h1></section>
 
             <section>
                 <ul>
-                    <li class="fragment">lib substitute</li>
-                    <li class="fragment">code-splitting</li>
+                    <li class="fragment">Lib substitute</li>
+                    <li class="fragment">Code-splitting</li>
                     <li class="fragment">link rel="preload"</li>
                     <li class="fragment"><a href="https://www.polymer-project.org/1.0/toolbox/server" target="_blank">PRPL Pattern</a></li>
                     <li class="fragment"><a href="https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447" target="_blank">Progressive Enhancement</a></li>
@@ -529,7 +536,7 @@ self.addEventListener('fetch', function(event) {
         </section>
 
         <section>
-            <h2>Limitations</h2>
+            <h2>Limitations ?</h2>
             <ul>
                 <li class="fragment">WEB !== NATIVE <a href="https://whatwebcando.today/" target="_blank">(whatwebcando.today)</a></li>
                 <li class="fragment">Service worker <a href="https://jakearchibald.github.io/isserviceworkerready/" target="_blank">(is service worker ready)</a></li>
@@ -539,7 +546,7 @@ self.addEventListener('fetch', function(event) {
         <section>
             <h2>Take away</h2>
             <ul>
-                <li class="fragment">Each step - 20%</li>
+                <li class="fragment">Each step - 20% vs PWA distribution</li>
                 <li class="fragment">Reliable - Fast - Engaging</li>
                 <li class="fragment">Progressive</li>
             </ul>
@@ -557,11 +564,11 @@ self.addEventListener('fetch', function(event) {
 
 <script>
     const colors = [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
+        '#E42128',
+        '#2782DA',
+        '#FD9626',
+        '#63BD32',
+        '#BD72BE',
         'rgba(255, 159, 64, 1)'
     ];
 
@@ -604,10 +611,6 @@ self.addEventListener('fetch', function(event) {
         if (checkFragment('lotr')) {
             Reveal.getCurrentSlide().dataset.background = 'https://media.giphy.com/media/1I2NwmjvSzNS0/giphy.gif';
             Reveal.sync();
-        }
-
-        if (checkFragment('pwa')) {
-            e.fragment.classList.add('highlight-red');
         }
 
     }, false);

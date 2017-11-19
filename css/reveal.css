@@ -11,10 +11,17 @@
 .reveal .text-small {
   font-size: 0.6em; }
 
+.reveal .text-very-small {
+  font-size: 0.4em; }
+
 .reveal .source {
   margin-top: 10px;
   font-size: 0.4em;
   font-style: italic; }
+
+.reveal .transparent {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px; }
 
 /*********************************************
  * RESET STYLES
